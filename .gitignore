@@ -1,0 +1,8 @@
+# locks
+yarn.lock
+package-lock.json
+# libraries
+node_modules
+# ide settings
+.idea
+.code
