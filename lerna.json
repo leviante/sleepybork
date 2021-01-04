@@ -3,5 +3,6 @@
     "packages/*"
   ],
   "npmClient": "yarn",
+  "registry": "http://localhost:4873",
   "version": "independent"
 }
