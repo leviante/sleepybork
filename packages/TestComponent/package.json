@@ -25,5 +25,8 @@
   },
   "bugs": {
     "url": "https://github.com/leviante/sleepybork/issues"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1"
   }
 }

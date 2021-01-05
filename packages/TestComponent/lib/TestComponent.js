@@ -1,8 +1,11 @@
-'use strict';
+import React from "react";
 
-module.exports = testComponent;
 
-function testComponent() {
+const TestComponent = () => {
     console.log("imported test component");
-    return "returned from Test Component";
+    return (
+        <div>Functional Test Component</div>
+    );
 }
+
+export default TestComponent;
