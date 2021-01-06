@@ -1,0 +1,32 @@
+{
+  "name": "@sleepybork/foo",
+  "version": "0.0.0",
+  "description": "test component",
+  "author": "bacikgoz <berk.acikgoz@hepsiburada.com>",
+  "homepage": "https://github.com/leviante/sleepybork#readme",
+  "license": "MIT",
+  "main": "dist/bundle.js.gz",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leviante/sleepybork.git"
+  },
+  "scripts": {
+    "build": "webpack --config ../../webpack.component.config.js"
+  },
+  "bugs": {
+    "url": "https://github.com/leviante/sleepybork/issues"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1"
+  }
+}

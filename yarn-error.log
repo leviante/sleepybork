@@ -1,0 +1,56 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js set version classic
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/bacikgoz/Desktop/playgrounds/lerna-playground/node_modules/.bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.15.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: Release not found: classic
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:90297:17
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:321:13
+      at processTicksAndRejections (internal/process/task_queues.js:93:5)
+
+npm manifest: 
+  {
+    "name": "root",
+    "private": true,
+    "scripts": {
+      "build:components": "lerna exec yarn build"
+    },
+    "devDependencies": {
+      "lerna": "^3.22.1",
+      "webpack": "^5.11.1",
+      "webpack-cli": "^4.3.1",
+      "@babel/core": "^7.9.0",
+      "@babel/plugin-proposal-class-properties": "^7.8.3",
+      "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
+      "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+      "@babel/plugin-transform-runtime": "^7.9.0",
+      "@babel/preset-env": "^7.9.0",
+      "@babel/preset-react": "^7.12.10",
+      "@babel/register": "^7.9.0",
+      "babel-loader": "^8.2.2",
+      "clean-webpack-plugin": "^3.0.0",
+      "compression-webpack-plugin": "^7.1.1"
+    },
+    "workspaces": [
+      "packages/*"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
