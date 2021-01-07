@@ -1,8 +1,9 @@
 {
   "name": "root",
-  "private": true,
+  "private": false,
   "scripts": {
-    "build:components": "lerna exec yarn build"
+    "build:components": "lerna exec yarn build",
+    "publish": "yarn build:components && lerna publish"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
