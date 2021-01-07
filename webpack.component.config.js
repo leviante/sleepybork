@@ -90,6 +90,7 @@ module.exports = {
                 use: [
                     "style-loader", // creates style nodes from JS strings
                     // cssModuleLoader,
+                    "css-loader",
                     postcssLoader,
                     "sass-loader"
                 ]
