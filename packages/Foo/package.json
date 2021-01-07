@@ -13,6 +13,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leviante/sleepybork.git"
@@ -26,5 +29,5 @@
   "peerDependencies": {
     "react": "^17.0.1"
   },
-  "gitHead": "daf68c4e8b63fc2035307864030c871d4de94d58"
+  "gitHead": "20b1a30990ffa7d747e7e38fc006c9f9f6c27ed9"
 }
