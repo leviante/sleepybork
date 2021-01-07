@@ -2,8 +2,8 @@
   "name": "root",
   "private": false,
   "scripts": {
-    "build:components": "lerna exec yarn build",
-    "publish": "yarn build:components && lerna publish"
+    "build:packages": "lerna exec yarn build",
+    "publish:packages": "yarn build:packages && lerna publish"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -27,5 +27,6 @@
   ],
   "dependencies": {
     "react": "^17.0.1"
-  }
+  },
+  "version": "0.0.0"
 }
