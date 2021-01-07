@@ -2,6 +2,8 @@ const path = require("path");
 //plugins
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
+const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
+
 //
 //
 // const cssModuleLoader = {
@@ -62,7 +64,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    "style-loader",
+                    ExtractCssChunks.loader,
                     // cssModuleLoader,
                     "postcss-loader"
                 ]
@@ -88,7 +90,7 @@ module.exports = {
             {
                 test: /\.s[a|c]ss$/,
                 use: [
-                    "style-loader", // creates style nodes from JS strings
+                    ExtractCssChunks.loader,
                     // cssModuleLoader,
                     "css-loader",
                     postcssLoader,
@@ -112,6 +114,7 @@ module.exports = {
         new CleanWebpackPlugin({
             verbose: true
         }),
+        new ExtractCssChunks(),
         new CompressionPlugin({
             algorithm: "gzip"
         })
