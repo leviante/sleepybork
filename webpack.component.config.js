@@ -2,8 +2,6 @@ const path = require("path");
 //plugins
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
-//assets
-// const package = require("./package.json");
 //
 //
 // const cssModuleLoader = {
@@ -16,15 +14,15 @@ const CompressionPlugin = require("compression-webpack-plugin");
 //         sourceMap: false
 // //     }
 // // };
-//
-// const postcssLoader = {
-//     loader: "postcss-loader",
-//     options: {
-//         config: {
-//             path: path.join(__dirname, "/postcss.config.js")
-//         }
-//     }
-// };
+
+const postcssLoader = {
+    loader: "postcss-loader",
+    options: {
+        config: {
+            path: path.join(__dirname, "/postcss.config.js")
+        }
+    }
+};
 
 module.exports = {
     entry: {
@@ -86,15 +84,15 @@ module.exports = {
                     ]
                 }
             },
-            // {
-            //     test: /\.s[a|c]ss$/,
-            //     use: [
-            //         "style-loader", // creates style nodes from JS strings
-            //         cssModuleLoader,
-            //         postcssLoader,
-            //         "sass-loader"
-            //     ]
-            // },
+            {
+                test: /\.s[a|c]ss$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    // cssModuleLoader,
+                    postcssLoader,
+                    "sass-loader"
+                ]
+            },
             {parser: {system: false}}
         ]
     },
