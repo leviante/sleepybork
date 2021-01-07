@@ -33,7 +33,7 @@ module.exports = {
     output: {
         filename: "bundle.js",
         path: path.resolve("./dist"),
-        library: "",
+        library: "berk",
         libraryTarget: "umd"
     },
     mode: "production",
