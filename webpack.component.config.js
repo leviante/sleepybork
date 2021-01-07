@@ -18,8 +18,9 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const postcssLoader = {
     loader: "postcss-loader",
     options: {
-        config: {
-            path: path.join(__dirname, "/postcss.config.js")
+        postcssOptions: {
+            config: path.join(__dirname, "/postcss.config.js"),
+
         }
     }
 };
