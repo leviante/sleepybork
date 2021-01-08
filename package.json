@@ -30,7 +30,7 @@
     "webpack-cli": "^4.3.1"
   },
   "workspaces": [
-    "packages/*"
+    "packages/components/*"
   ],
   "dependencies": {
     "react": "^17.0.1"

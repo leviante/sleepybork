@@ -1,12 +1,11 @@
-# `@sleepybork/foo`
+# `@sleepybork/index`
 
 > TODO: description
 
 ## Usage
 
 ```
-const foo = require('@sleepybork/foo');
+const index = require('@sleepybork/index');
 
 // TODO: DEMONSTRATE API
 ```
-w

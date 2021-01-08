@@ -3,8 +3,12 @@ const path = require("path");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
+const pkg = require(path.resolve("./package.json"));
 
-//
+const COMPONENT_NAME = pkg.name.split("/")[1];
+
+console.log(COMPONENT_NAME);
+
 //
 // const cssModuleLoader = {
 //     loader: "css-loader",
@@ -29,12 +33,12 @@ const postcssLoader = {
 
 module.exports = {
     entry: {
-        package: "./lib/index.js"
+        [COMPONENT_NAME]: "./lib/index.js"
     },
     output: {
-        filename: "bundle.js",
+        filename: `${COMPONENT_NAME}.min.js`,
         path: path.resolve("./dist"),
-        library: "berk",
+        library: pkg.name,
         libraryTarget: "umd"
     },
     mode: "production",
@@ -114,7 +118,9 @@ module.exports = {
         new CleanWebpackPlugin({
             verbose: true
         }),
-        new ExtractCssChunks(),
+        new ExtractCssChunks({
+            filename: "[name].min.css"
+        }),
         new CompressionPlugin({
             algorithm: "gzip"
         })
