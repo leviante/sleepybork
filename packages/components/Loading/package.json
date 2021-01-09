@@ -1,6 +1,6 @@
 {
   "name": "@sleepybork/loading",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.2-alpha.0",
   "description": "Loading component for sleepybork",
   "author": "bacikgoz <berk.acikgoz@hepsiburada.com>",
   "homepage": "https://github.com/leviante/sleepybork#readme",
@@ -30,6 +30,6 @@
     "react": "^17.0.1"
   },
   "dependencies": {
-    "@sleepybork/styles": "^0.0.1-alpha.0"
+    "@sleepybork/styles": "^0.0.2-alpha.0"
   }
 }
