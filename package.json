@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "build:packages": "lerna exec yarn build",
+    "build:packages": "lerna run build --no-bail",
     "publish:packages": "yarn build:packages && lerna publish"
   },
   "devDependencies": {

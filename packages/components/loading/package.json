@@ -1,17 +1,17 @@
 {
-  "name": "@sleepybork/styles-utils",
+  "name": "@sleepybork/loading",
   "version": "0.0.0",
-  "description": "All css utils wrapped in a module",
+  "description": "Loading component for catalog",
   "author": "bacikgoz <berk.acikgoz@hepsiburada.com>",
   "homepage": "https://github.com/leviante/sleepybork#readme",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "dist/loading.min.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "publishConfig": {
     "registry": "http://localhost:4873"
@@ -21,7 +21,7 @@
     "url": "git+https://github.com/leviante/sleepybork.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "build": "webpack --config ../../../webpack.package.config.js"
   },
   "bugs": {
     "url": "https://github.com/leviante/sleepybork/issues"

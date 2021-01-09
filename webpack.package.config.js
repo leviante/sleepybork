@@ -3,23 +3,22 @@ const path = require("path");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
+//utils
 const pkg = require(path.resolve("./package.json"));
-
 const COMPONENT_NAME = pkg.name.split("/")[1];
 
-console.log(COMPONENT_NAME);
-
-//
-// const cssModuleLoader = {
-//     loader: "css-loader",
-//     options: {
-//         modules: {
-//             localIdentName: "[name]_[local]_[hash:base64:6]",
-//         },
-//         localsConvention: "camelCase",
-//         sourceMap: false
-// //     }
-// // };
+const cssLoader = {
+    loader: "css-loader",
+    options: {
+        modules: {
+            auto: true, //
+            compileType: "module",
+            mode: "local",
+            localIdentName: "[path][name]__[local]--[hash:base64:5]",
+            exportLocalsConvention: "camelCase"
+        }
+    }
+};
 
 const postcssLoader = {
     loader: "postcss-loader",
@@ -69,7 +68,7 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     ExtractCssChunks.loader,
-                    // cssModuleLoader,
+                    cssLoader,
                     "postcss-loader"
                 ]
             },
@@ -95,8 +94,7 @@ module.exports = {
                 test: /\.s[a|c]ss$/,
                 use: [
                     ExtractCssChunks.loader,
-                    // cssModuleLoader,
-                    "css-loader",
+                    cssLoader,
                     postcssLoader,
                     "sass-loader"
                 ]
