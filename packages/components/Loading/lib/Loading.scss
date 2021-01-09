@@ -1,6 +1,6 @@
 @use "~@sleepybork/styles/dist/styles";
 
-.spinner {
+:local .spinner {
   @include styles.wh(65px, 65px);
   display: block;
   -webkit-animation: rotate 2s linear infinite;
