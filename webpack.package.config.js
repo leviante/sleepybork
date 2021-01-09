@@ -14,7 +14,7 @@ const cssLoader = {
             auto: true,
             compileType: "module",
             mode: "local",
-            localIdentName: "[path][name]__[local]--[hash:base64:5]",
+            localIdentName: "[hash:base64:5]",
             exportLocalsConvention: "camelCase"
         }
     }

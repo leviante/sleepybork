@@ -4,10 +4,10 @@ import React, {Fragment} from "react";
 import styles from "./Loading.scss";
 
 const Loading = ({className}) => {
-
+    console.log(styles);
     return (
         <Fragment>
-            <svg className={`${styles.spinner} ${className}`} viewBox="0 0 44 44">
+            <svg className={`${styles.spinner} ${className ? className: ""}`} viewBox="0 0 44 44">
                 <circle className={styles.path} cx="22" cy="22" r="20" fill="none" strokeWidth="4" />
             </svg>
         </Fragment>
