@@ -1,0 +1,148 @@
+@mixin font($size, $weight, $style, $stretch) {
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+  font-stretch: $stretch;
+}
+
+@mixin line-style($line-height, $letter-spacing) {
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin wh($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+@mixin wh-range($min-width: 0, $max-width: none, $min-height: 0, $max-height: none) {
+  min-width: $min-width;
+  max-width: $max-width;
+  min-height: $min-height;
+  max-height: $max-height;
+}
+
+@mixin sticky($position: sticky, $top: 0 ) {
+  position: $position;
+  top: $top;
+}
+
+@mixin background($background-color: transparent, $background-image: none, $background-size: auto, $background-repeat: repeat) {
+  background-color: $background-color;
+  background-image: $background-image;
+  background-size: $background-size;
+  background-repeat: $background-repeat;
+}
+
+@mixin define-flex($flex-direction: row, $justify-content: center, $align-items: center) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin define-pos($position: static, $top: auto, $left: auto, $right: auto, $bottom: auto, $z-index: auto) {
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  z-index: $z-index;
+}
+
+@mixin icon-states($selector, $targetAttribute, $isDarkMode: false) {
+  &:hover {
+    @if $selector == null {
+      #{$targetAttribute}: if($isDarkMode, $black-90, $black-20);
+    } @else {
+      #{$selector} {
+        #{$targetAttribute}: if($isDarkMode, $black-90, $black-20);
+      }
+    }
+  }
+
+  &:active {
+    @if $selector == null {
+      #{$targetAttribute}: if($isDarkMode, $black-80, $black-30);
+    } @else {
+      #{$selector} {
+        #{$targetAttribute}: if($isDarkMode, $black-80, $black-30);
+      }
+    }
+  }
+}
+
+@mixin border($border, $border-radius) {
+  border: $border;
+  border-radius: $border-radius;
+}
+
+@mixin hidden-scrollbar() {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}
+
+@mixin scrollY($height: inherit, $max-height: inherit, $overflow-y: auto) {
+  @include hidden-scrollbar;
+  height: $height;
+  max-height: $max-height;
+  overflow-y: $overflow-y;
+
+}
+
+
+@mixin print($declarations) {
+  @each $property, $value in $declarations {
+    #{$property}: $value
+  }
+}
+
+@mixin custom-scrollbar($scrollbar-width: auto, $scrollbar-bg-color: inherit, $scrollbar-thumb-color: inherit, $scrollbar-thumb-radius: inherit) {
+  overflow-y: auto;
+
+  //Chrome, Safari.
+  &::-webkit-scrollbar {
+    display: block;
+    width: $scrollbar-width;
+    height: 100%;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $scrollbar-bg-color;
+    border-radius: $scrollbar-thumb-radius;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb-color;
+    border-radius: $scrollbar-thumb-radius;
+
+    &:hover {
+      background-color: darken($scrollbar-thumb-color, 20);
+    }
+  }
+}
+
+@mixin clickable($cursor : pointer) {
+  cursor: $cursor;
+}
+
+@mixin non-select() {
+  user-select: none;
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin multi-line-ellipsis($line: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}

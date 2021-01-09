@@ -1,0 +1,161 @@
+@mixin animate-opacity($animationDuration: 0.3s, $animationTiming: ease) {
+
+  &.show {
+    animation-name: fade-in;
+    animation-duration: $animationDuration;
+    animation-iteration-count: 1;
+    animation-timing-function: $animationTiming;
+    animation-fill-mode: forwards;
+  }
+
+  &.hide {
+    animation-name: fade-out;
+    animation-duration: $animationDuration;
+    animation-iteration-count: 1;
+    animation-timing-function: $animationTiming;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+@mixin animate-scale($animationDuration: 0.2s, $animationTiming: ease) {
+  &.show {
+    animation-name: scale-up;
+    animation-duration: $animationDuration;
+    animation-iteration-count: 1;
+    animation-timing-function: $animationTiming;
+    animation-fill-mode: forwards;
+  }
+
+  &.hide {
+    animation-name: scale-down;
+    animation-duration: $animationDuration;
+    animation-iteration-count: 1;
+    animation-timing-function: $animationTiming;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes scale-up {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
+    }
+  }
+
+  @keyframes scale-down {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+      visibility: hidden;
+    }
+  }
+}
+
+@mixin animate-transform($animationDuration: 0.3s, $animationDirection: "right", $animationTiming: ease) {
+  animation-duration: $animationDuration;
+  animation-iteration-count: 1;
+  animation-timing-function: $animationTiming;
+  animation-fill-mode: forwards;
+
+  @if $animationDirection == "right" {
+    &.visible {
+      animation-name: slide-in-right;
+    }
+
+    &.hide {
+      animation-name: slide-out-right;
+    }
+  } @else {
+    &.visible {
+      animation-name: slide-in-left;
+    }
+
+    &.hide {
+      animation-name: slide-out-left;
+    }
+  }
+
+
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-out-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-out-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@mixin animate-hover-bg-border-color($bg: auto, $border: auto, $color: auto, $transitionTime: 0.3s) {
+  transition: background-color $transitionTime,
+  border $transitionTime,
+  color $transitionTime;
+
+  svg path {
+    transition: fill $transitionTime;
+  }
+
+  &:hover {
+    background-color: $bg;
+    border: $border;
+    color: $color;
+
+    svg path {
+      fill: $color; //svg doesn't support color, it supports fill attribute.
+    }
+  }
+}

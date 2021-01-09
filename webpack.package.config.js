@@ -11,7 +11,7 @@ const cssLoader = {
     loader: "css-loader",
     options: {
         modules: {
-            auto: true, //
+            auto: true,
             compileType: "module",
             mode: "local",
             localIdentName: "[path][name]__[local]--[hash:base64:5]",

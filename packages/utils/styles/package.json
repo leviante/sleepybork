@@ -1,0 +1,28 @@
+{
+  "name": "@sleepybork/styles",
+  "version": "0.0.0",
+  "description": "Common styles for sleepybork",
+  "author": "bacikgoz <berk.acikgoz@hepsiburada.com>",
+  "homepage": "https://github.com/leviante/sleepybork#readme",
+  "license": "MIT",
+  "main": "dist/styles.scss",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leviante/sleepybork.git"
+  },
+  "scripts": {
+    "build": "scss-bundle -e ./lib/index.scss -o ./dist/styles.scss"
+  },
+  "bugs": {
+    "url": "https://github.com/leviante/sleepybork/issues"
+  },
+  "devDependencies": {
+    "scss-bundle": "^3.1.2"
+  }
+}
